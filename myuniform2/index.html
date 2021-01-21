@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            const hum = $('#hamburger, .close')
+            const nav = $('.sp-nav')
+            hum.on('click', function () {
+                nav.toggleClass('toggle');
+            });
+        });
+    </script>
+</head>
+
+<header>
+    <h1 class="title">MyUniform</h1>
+    <nav class="nav">
+        <ul class="menu-group">
+            <li class="menu-item"><a href="#">ようこそゲストさん</a></li>
+            <li class="menu-item"><a href="#">MyUniformとは</a></li>
+            <li class="menu-item"><a href="#">スポーツウェアニュース</a></li>
+            <li class="menu-item"><a href="#">マイページ</a></li>
+        </ul>
+    </nav>
+    <nav class="sp-nav">
+        <ul>
+            <li><a href="#">ようこそゲストさん</a></li>
+            <li><a href="#">MyUniformとは</a></li>
+            <li><a href="#">スポーツウェアニュース</a></li>
+            <li><a href="#">マイページ</a></li>
+            <li class="close"><span>閉じる</span></li>
+        </ul>
+    </nav>
+    <div id="hamburger">
+        <span></span>
+    </div>
+</header>
+
+<body>
+    @foreach ($items as $item)
+    <li>
+        <p>{{$item->id}}</p>
+        <p>{{$item->jancode}}</p>
+        <p>{{$item->gender}}</p>
+        <p>{{$item->adult}}</p>
+        <p>{{$item->price}}</p>
+        <p>{{$item->brand}}</p>
+        <p>{{$item->category}}</p>
+        <p>{{$item->color}}</p>
+    </li>
+    @endforeach
+    @foreach ($items2 as $item2)
+    <li>
+        <p>{{$item2->id}}</p>
+        <p>{{$item2->jancode}}</p>
+        <p>{{$item2->gender}}</p>
+        <p>{{$item2->adult}}</p>
+        <p>{{$item2->price}}</p>
+        <p>{{$item2->brand}}</p>
+        <p>{{$item2->category}}</p>
+        <p>{{$item2->color}}</p>
+    </li>
+    @endforeach
+    @foreach ($items3 as $item3)
+    <li>
+        <p>{{$item3->id}}</p>
+        <p>{{$item3->jancode}}</p>
+        <p>{{$item3->gender}}</p>
+        <p>{{$item3->adult}}</p>
+        <p>{{$item3->price}}</p>
+        <p>{{$item3->brand}}</p>
+        <p>{{$item3->category}}</p>
+        <p>{{$item3->color}}</p>
+    </li>
+    @endforeach
+
+    <!-- footer -->
+    <footer>
+        <h3>© All rights reserved by MyUniform Inc</h3>
+    </footer>
+</body>
+
+</html>
